@@ -31,7 +31,7 @@ export function Providers(props: Props) {
   return (
     <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
       <DirectionProvider direction={direction} toggleDirection={toggleDirection}>
-        <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
+        <MantineProvider theme={{ colorScheme, dir: direction }} withGlobalStyles withNormalizeCSS>
           {children}
         </MantineProvider>
       </DirectionProvider>

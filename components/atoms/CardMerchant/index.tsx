@@ -1,4 +1,5 @@
-import { AspectRatio, Card, Group, Image, Text, Title } from '@mantine/core';
+import { Box, Card, Group, Text, Title } from '@mantine/core';
+import Image from 'next/image';
 import useStyles from 'components/atoms/CardMerchant/styles';
 import { Star } from 'tabler-icons-react';
 import Location from 'assets/icons/Location';
@@ -17,9 +18,10 @@ export function CardMerchant(props: Props) {
 
   return (
     <Card shadow="sm" className={classes.root}>
-      <AspectRatio ratio={296 / 146}>
-        <Image src={img} alt={name} className={classes.img} />
-      </AspectRatio>
+      <Box className={classes.imgWrap}>
+        <Image src={img} layout="fill" objectFit="cover" alt={name} className={classes.img} />
+        <Text className={classes.delivery}>15–25 min</Text>
+      </Box>
       <Title order={3} className={classes.title}>
         {name}
       </Title>
